@@ -14,6 +14,12 @@
 
 直接打开 `index.html`，或用任意静态服务器托管。
 
+## 在线预览
+
+- GitHub Pages：首页 `https://shuishen49.github.io/kuaima/`
+- 零工页：`https://shuishen49.github.io/kuaima/#worker`
+- 老板页：`https://shuishen49.github.io/kuaima/#boss`
+
 ## 静态托管建议
 
 - 构建输出目录：项目根目录（当前仓库根）
