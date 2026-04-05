@@ -27,3 +27,4 @@
   - 已对 skill 安装失败做过重试与替代方案处理（改为本地手工安装 skill 说明文件）。
   - 已对浏览器内核下载失败做过重试与替代方案处理（改用本机已安装的 Chrome，而非下载 Chromium）。
   - 已对 headed 浏览器会话掉回 `about:blank` 的情况执行关闭并重开，当前可见窗口已恢复到 `https://shuishen49.github.io/kuaima/#worker`。
+  - 已再次验证 GitHub Pages 在线地址 `https://shuishen49.github.io/kuaima/` 返回 200，页面标题仍为“快马日结 - Web 静态版”。
