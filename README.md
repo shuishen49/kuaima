@@ -27,6 +27,13 @@
 - 404：`/404.html`
 - 支持 hash 路由，可直接访问如 `/#worker`
 
+## 文档导航
+
+- 部署说明：`docs/README_DEPLOY.md` 或仓库根 `README_DEPLOY.md`
+- 产品 / UI / QA：`docs/PM_PLAN.md`、`docs/UI_GUIDE.md`、`docs/QA_CHECKLIST.md`
+- 进度巡检日志：`docs/PROGRESS_LOG.md`
+- 浏览器控制安装总结：`docs/AGENT_BROWSER_INSTALL_SUMMARY.md`
+
 ## 联系方式
 
 - QQ：`93418328`
