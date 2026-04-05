@@ -15,11 +15,11 @@
   - 按用户提供的 4 张设计参考图，对 landing / 零工端 / 老板端做了一轮视觉重构。
   - 首页新增顶部 badge、快捷胶囊、收益横条、推荐主卡、公告提醒卡、服务入口模块、hero 搜索/定位工具条。
   - 订单 / 消息 / 我的页统一改为带 `sub-hero` 的顶部信息层，并补充摘要统计块。
-  - 消息页已补时间信息与更真实的消息行结构。
+  - 消息页已补时间信息、未读提示点与更真实的消息行结构。
   - 身份选择页人物图增加裁切与遮罩，并对 worker / boss 分别细调定位。
   - `web-static` 已独立初始化 Git 仓库并推送到 GitHub：`https://github.com/shuishen49/kuaima`
   - GitHub Pages 已可访问：`https://shuishen49.github.io/kuaima/`
-  - README 与部署文档已补充在线预览地址、联系方式。
+  - README 与部署文档已补充在线预览地址、联系方式，以及浏览器控制 skill / CLI 安装总结。
 - 阻塞情况：
   - 浏览器自动化相关 skill 在线安装失败，已改为手工落地本地 skill。
   - 后续已成功安装 `agent-browser` CLI，并通过本机 Chrome 完成最小可用测试与可见窗口启动；当前浏览器代操作能力已具备。
