@@ -1,5 +1,10 @@
 # kuaima 静态站部署说明（EdgeOne Pages）
 
+## 当前已上线预览
+
+- GitHub Pages：首页 `https://shuishen49.github.io/kuaima/`
+- 角色页示例：`https://shuishen49.github.io/kuaima/#worker`
+
 ## 目录
 上传整个 `web-static` 目录内容：
 
