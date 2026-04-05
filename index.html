@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>快马日结 - Web 静态版</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+<div class="app">
+  <!-- 角色选择 -->
+  <section id="landing" class="page landing active">
+    <div class="header">
+      <span class="subtitle">很高兴见到你</span>
+      <div class="title">请选择你的身份</div>
+    </div>
+    <div class="cards">
+      <div id="cardWorker" class="card worker-bg active" onclick="selectRole('worker')">
+        <h3>零工找活</h3>
+        <span class="tag">真老板</span><span class="tag">真工价</span><span class="tag">真日结</span>
+        <img class="card-figure worker-figure" src="./static/images/worker.png" alt="worker" />
+      </div>
+      <div id="cardBoss" class="card boss-bg" onclick="selectRole('boss')">
+        <h3>老板招工</h3>
+        <span class="tag">熟练工</span><span class="tag">上岗快</span><span class="tag">人靠谱</span>
+        <img class="card-figure boss-figure" src="./static/images/boss.png" alt="boss" />
+      </div>
+    </div>
+    <div style="margin-top:20px"><button id="enterBtn" class="btn" onclick="enterRole()">我是零工，去找活</button></div>
+  </section>
+
+  <!-- 零工-首页 -->
+  <section id="worker" class="page">
+    <div class="hero worker">
+      <div class="hero-top">
+        <div>
+          <span class="brand">快马日结</span>
+          <h1>找日结 · 上快马</h1>
+          <p>真老板 / 真工价 / 真日结</p>
+        </div>
+        <img class="hero-img" src="./static/images/worker_avatar.png" alt="avatar">
+      </div>
+      <div class="hero-meta">
+        <span class="hero-badge">新人补贴 18 元</span>
+        <span class="hero-badge">最快 3 分钟接单</span>
+      </div>
+    </div>
+    <div class="panel quick-panel">
+      <div class="quick-row">
+        <div class="quick-pill active">全部岗位</div>
+        <div class="quick-pill">附近急招</div>
+        <div class="quick-pill">夜班日结</div>
+        <div class="quick-pill">包餐包住</div>
+      </div>
+      <div class="income-banner">
+        <div>
+          <div class="muted">本周预估收入</div>
+          <div class="income-value">¥ 886</div>
+        </div>
+        <div class="income-side">已上岗 4 天<br><span class="muted">继续冲刺补贴</span></div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="section-title">新人引导</div>
+      <div class="grid2">
+        <div class="item"><b>接单课堂</b><div class="muted">3 分钟看懂接单流程</div></div>
+        <div class="item"><b>补贴活动</b><div class="muted">新人首单奖励 18 元</div></div>
+        <div class="item"><b>规则大全</b><div class="muted">零工百宝箱</div></div>
+        <div class="item"><b>附近岗位</b><div class="muted">义学路 32 号</div></div>
+      </div>
+    </div>
+    <div class="panel notice-panel">
+      <div class="notice-head"><span class="notice-dot"></span><span class="section-title" style="margin:0">平台公告</span></div>
+      <div class="muted">谢*超多次私加微信飞单，永久封号；报名后请在 10 分钟内确认接单。</div>
+    </div>
+    <div class="panel">
+      <div class="section-title">推荐岗位</div>
+      <div class="featured-job">
+        <div class="featured-top"><span class="pill">平台热推</span><span class="featured-distance">两江新区 · 今日 19:00-08:00</span></div>
+        <div class="featured-title">快递小件搬运装卸工 + 小件扫描</div>
+        <div class="featured-tags"><span class="job-tag">可日结</span><span class="job-tag">夜班</span><span class="job-tag">报满即停</span></div>
+        <div class="featured-bottom"><div><span class="price">210</span> <span class="muted">元/天</span></div><button class="grab">立即抢单</button></div>
+      </div>
+      <div class="job" style="margin-top:14px">
+        <div class="job-top"><span>今天 20:00-08:00</span><span>空港 · 5.1km</span></div>
+        <div class="job-title">分拣扫描 + 小件集包</div>
+        <div class="job-tags"><span class="job-tag">夜班</span><span class="job-tag">可日结</span><span class="job-tag">18-48岁</span></div>
+        <div class="job-bottom"><div><span class="price">220</span> <span class="muted">元/天</span></div><button class="grab">抢新单</button></div>
+      </div>
+      <div class="job">
+        <div class="job-top"><span>明天 08:00-18:00</span><span>礼嘉 · 3.2km</span></div>
+        <div class="job-title">电商打包 + 贴单复核</div>
+        <div class="job-tags"><span class="job-tag">白班</span><span class="job-tag">轻松岗</span><span class="job-tag">包餐</span></div>
+        <div class="job-bottom"><div><span class="price">230</span> <span class="muted">元/天</span></div><button class="grab">抢新单</button></div>
+      </div>
+    </div>
+    <div class="panel service-panel">
+      <div class="section-title">常用服务</div>
+      <div class="service-grid">
+        <div class="service-item"><div class="service-icon">💰</div><b>收益中心</b><div class="muted">累计补贴 86 元</div></div>
+        <div class="service-item"><div class="service-icon">🎁</div><b>邀工友返现</b><div class="muted">邀请成功最高得 66 元</div></div>
+        <div class="service-item"><div class="service-icon">📘</div><b>常见问题</b><div class="muted">迟到、取消、申诉说明</div></div>
+        <div class="service-item"><div class="service-icon">📢</div><b>违规公示</b><div class="muted">保障平台公平</div></div>
+      </div>
+    </div>
+    <div class="tabs-bottom"><div class="tabs-inner">
+      <div class="tab active">首页</div><div class="tab" onclick="show('workerOrder')">订单</div><div class="tab" onclick="show('workerMsg')">消息</div><div class="tab" onclick="show('workerMine')">我的</div>
+    </div></div>
+  </section>
+
+  <!-- 零工-订单 -->
+  <section id="workerOrder" class="page">
+    <div class="sub-hero worker-sub">
+      <div class="top-actions"><div class="back" onclick="show('worker')">← 返回首页</div><span class="pill">零工订单</span></div>
+      <div class="sub-hero-title">我的订单</div>
+      <div class="sub-hero-desc">待确认 1 单 · 进行中 1 单 · 已完成 1 单</div>
+    </div>
+    <div class="panel">
+      <div class="chips">
+        <div class="chip active">全部</div><div class="chip">待确认</div><div class="chip">进行中</div><div class="chip">已完成</div><div class="chip">已取消</div>
+      </div>
+      <div class="panel" style="margin:12px 0 0;padding:10px 12px;background:#fff9db;box-shadow:none">
+        <div class="muted" style="color:#8a6a00">报名后请在 10 分钟内确认接单，迟到 / 爽约会影响信用分。</div>
+      </div>
+      <div class="job">
+        <div class="job-top"><span>今天 19:00-08:00</span><span>王家街道 · 6.4km</span></div>
+        <div class="job-title">快递小件搬运装卸工 + 小件扫描</div>
+        <div class="job-tags"><span class="job-tag">待确认</span><span class="job-tag">12小时</span><span class="job-tag">男</span><span class="job-tag">18-49岁</span></div>
+        <div class="job-bottom"><div><span class="price">210</span> <span class="muted">元/天</span></div><button class="grab">确认接单</button></div>
+      </div>
+      <div class="job">
+        <div class="job-top"><span>今天 20:00-08:00</span><span>空港 · 5.1km</span></div>
+        <div class="job-title">分拣扫描 + 小件集包</div>
+        <div class="job-tags"><span class="job-tag">进行中</span><span class="job-tag">夜班</span><span class="job-tag">可日结</span></div>
+        <div class="job-bottom"><div><span class="price">220</span> <span class="muted">元/天</span></div><button class="grab">查看考勤</button></div>
+      </div>
+      <div class="job">
+        <div class="job-top"><span>昨天 08:00-18:00</span><span>礼嘉街道 · 3.2km</span></div>
+        <div class="job-title">仓储分拣 + 扫码复核</div>
+        <div class="job-tags"><span class="job-tag">已完成</span><span class="job-tag">白班</span><span class="job-tag">18-45岁</span></div>
+        <div class="job-bottom"><div><span class="price">230</span> <span class="muted">元/天</span></div><button class="grab">查看详情</button></div>
+      </div>
+    </div>
+    <div class="tabs-bottom"><div class="tabs-inner">
+      <div class="tab" onclick="show('worker')">首页</div><div class="tab active">订单</div><div class="tab" onclick="show('workerMsg')">消息</div><div class="tab" onclick="show('workerMine')">我的</div>
+    </div></div>
+  </section>
+
+  <!-- 零工-消息 -->
+  <section id="workerMsg" class="page">
+    <div class="sub-hero worker-sub">
+      <div class="top-actions"><div class="back" onclick="show('worker')">← 返回首页</div><span class="pill">消息</span></div>
+      <div class="sub-hero-title">消息中心</div>
+      <div class="sub-hero-desc">1 条待确认订单 · 1 条活动提醒 · 客服在线</div>
+    </div>
+    <div class="panel">
+      <div class="msg"><div class="icon orange">🔔</div><div><b>系统通知</b><div class="muted">报名后请在10分钟内确认接单</div></div></div>
+      <div class="msg"><div class="icon blue">📄</div><div><b>订单提醒</b><div class="muted">你有 1 条待确认订单</div></div></div>
+      <div class="msg"><div class="icon green">💬</div><div><b>平台客服</b><div class="muted">有问题随时联系人工客服</div></div></div>
+      <div class="msg"><div class="icon orange">🎁</div><div><b>活动中心</b><div class="muted">连续上岗 3 天可领额外补贴 30 元</div></div></div>
+    </div>
+    <div class="tabs-bottom"><div class="tabs-inner">
+      <div class="tab" onclick="show('worker')">首页</div><div class="tab" onclick="show('workerOrder')">订单</div><div class="tab active">消息</div><div class="tab" onclick="show('workerMine')">我的</div>
+    </div></div>
+  </section>
+
+  <!-- 零工-我的 -->
+  <section id="workerMine" class="page">
+    <div class="sub-hero worker-sub">
+      <div class="top-actions"><div class="back" onclick="show('worker')">← 返回首页</div><span class="pill">我的</span></div>
+      <div class="profile-row">
+        <div>
+          <div class="sub-hero-title">用户9431 | 零工</div>
+          <div class="sub-hero-desc">信用分 100 · 正常抢单</div>
+        </div>
+        <button class="grab light">我要招人</button>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="stats">
+        <div class="stat"><b>0</b><span class="muted">累计收入</span></div>
+        <div class="stat"><b>0%</b><span class="muted">完单率</span></div>
+        <div class="stat"><b>0%</b><span class="muted">取消率</span></div>
+        <div class="stat"><b>0</b><span class="muted">徽章数</span></div>
+      </div>
+    </div>
+    <div class="panel grid2">
+      <div class="item"><b>我的钱包</b><div class="muted">余额 / 奖励金</div></div>
+      <div class="item"><b>联系客服</b><div class="muted">7x12 在线</div></div>
+      <div class="item"><b>接单课堂</b><div class="muted">提升收入</div></div>
+      <div class="item"><b>实名认证</b><div class="muted">提升权益</div></div>
+      <div class="item"><b>邀请有礼</b><div class="muted">邀请工友得返现</div></div>
+      <div class="item"><b>信用申诉</b><div class="muted">异常扣分可申诉</div></div>
+    </div>
+    <div class="panel">
+      <div class="section-title">平台服务</div>
+      <div class="muted">客服电话 400-123-1234 · 工作时间 8:00-18:00</div>
+    </div>
+    <div class="tabs-bottom"><div class="tabs-inner">
+      <div class="tab" onclick="show('worker')">首页</div><div class="tab" onclick="show('workerOrder')">订单</div><div class="tab" onclick="show('workerMsg')">消息</div><div class="tab active">我的</div>
+    </div></div>
+  </section>
+
+  <!-- 老板-首页 -->
+  <section id="boss" class="page">
+    <div class="hero boss">
+      <div class="hero-top">
+        <div>
+          <span class="brand">快马日结</span>
+          <h1>招临时工</h1>
+          <p>像叫网约车一样省心</p>
+        </div>
+        <img class="hero-img" src="./static/images/boss_hero.png" alt="boss">
+      </div>
+      <div class="hero-meta">
+        <span class="hero-badge">首单减免招聘费</span>
+        <span class="hero-badge">平台统一结算</span>
+      </div>
+    </div>
+    <div class="panel quick-panel">
+      <div class="quick-row">
+        <div class="quick-pill active">附近零工</div>
+        <div class="quick-pill">急招夜班</div>
+        <div class="quick-pill">熟手优先</div>
+        <div class="quick-pill">批量招人</div>
+      </div>
+      <div class="income-banner boss-banner">
+        <div>
+          <div class="muted">今日可约零工</div>
+          <div class="income-value">5615 人</div>
+        </div>
+        <div class="income-side">最快 3 分钟接单<br><span class="muted">像叫车一样招工</span></div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="muted">重庆有 5615 人找工作</div>
+      <div style="margin:8px 0 14px;font-size:22px;font-weight:900">点击查看附近零工</div>
+      <button class="btn">去发布招工</button>
+      <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap"><span class="pill">首单免招聘费</span><span class="pill">最快 3 分钟接单</span><span class="pill">平台结算</span></div>
+      <div class="featured-job boss-featured" style="margin-top:14px">
+        <div class="featured-top"><span class="pill">转化最高</span><span class="featured-distance">夜班装卸 · 渝北仓</span></div>
+        <div class="featured-title">12 人夜班装卸分拣，熟手优先，报满即止</div>
+        <div class="featured-tags"><span class="job-tag">需求 12 人</span><span class="job-tag">已报名 8</span><span class="job-tag">待补 4 人</span></div>
+        <div class="featured-bottom"><div><span class="price">1368</span> <span class="muted">元/单</span></div><button class="grab">继续招人</button></div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="section-title">招工流程</div>
+      <div class="grid2">
+        <div class="item"><b>1 发布招工</b><div class="muted">填写班次、人数、报酬</div></div>
+        <div class="item"><b>2 零工接单</b><div class="muted">平台智能推荐附近熟手</div></div>
+        <div class="item"><b>3 到岗干活</b><div class="muted">排班透明，实时掌握出勤</div></div>
+        <div class="item"><b>4 平台结算</b><div class="muted">减少扯皮，降低管理成本</div></div>
+      </div>
+    </div>
+    <div class="panel service-panel">
+      <div class="section-title">核心能力</div>
+      <div class="service-grid">
+        <div class="service-item"><div class="service-icon">⚡</div><b>到岗快</b><div class="muted">最快 3 分钟接单</div></div>
+        <div class="service-item"><div class="service-icon">🧰</div><b>熟练工</b><div class="muted">多行业覆盖</div></div>
+        <div class="service-item"><div class="service-icon">🛡️</div><b>人靠谱</b><div class="muted">实名 + 信用分</div></div>
+        <div class="service-item"><div class="service-icon">💸</div><b>更省钱</b><div class="muted">成本更优</div></div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="section-title">同行评价</div>
+      <div class="muted">“9 月份缺工试用了下，来的基本都是熟手，也不偷懒，以后会一直在这里招临时工。”</div>
+      <div style="margin-top:8px;font-weight:700">李总 · 深圳某塑料制品厂</div>
+    </div>
+    <div class="panel">
+      <div class="section-title">平台保障</div>
+      <div class="grid2">
+        <div class="item"><b>实名接单</b><div class="muted">降低用工风险，减少临时放鸽子</div></div>
+        <div class="item"><b>平台结算</b><div class="muted">完工后统一结算，少扯皮</div></div>
+        <div class="item"><b>在线客服</b><div class="muted">招工过程中随时协助处理问题</div></div>
+        <div class="item"><b>招工建议</b><div class="muted">帮助优化岗位文案，提高接单率</div></div>
+      </div>
+    </div>
+    <div class="panel notice-panel">
+      <div class="notice-head"><span class="notice-dot"></span><span class="section-title" style="margin:0">招工提醒</span></div>
+      <div class="muted">岗位标题写清楚班次、人数、报酬，通常能提升 20% 以上报名率。</div>
+    </div>
+    <div class="tabs-bottom"><div class="tabs-inner">
+      <div class="tab active">首页</div><div class="tab" onclick="show('bossOrder')">日结订单</div><div class="tab" onclick="show('bossMsg')">消息</div><div class="tab" onclick="show('bossMine')">我的</div>
+    </div></div>
+  </section>
+
+  <!-- 老板-订单 -->
+  <section id="bossOrder" class="page">
+    <div class="sub-hero boss-sub">
+      <div class="top-actions"><div class="back" onclick="show('boss')">← 返回首页</div><span class="pill">招工订单</span></div>
+      <div class="sub-hero-title">招工订单</div>
+      <div class="sub-hero-desc">进行中 2 单 · 待结算 1 单 · 待开工 1 单</div>
+    </div>
+    <div class="panel">
+      <div class="chips">
+        <div class="chip active">全部</div><div class="chip">待开工</div><div class="chip">进行中</div><div class="chip">待结算</div><div class="chip">已完成</div>
+      </div>
+      <div class="panel" style="margin:12px 0 0;padding:10px 12px;background:#fff9db;box-shadow:none">
+        <div class="muted" style="color:#8a6a00">请勿交换微信和手机号，零工完工后请及时确认并走平台结算。</div>
+      </div>
+      <div class="job">
+        <div class="job-top"><span>今天 19:00-08:00</span><span>渝北 · 需求 12 人</span></div>
+        <div class="job-title">装卸 + 分拣（夜班）</div>
+        <div class="job-tags"><span class="job-tag">已报名 8</span><span class="job-tag">已到岗 5</span><span class="job-tag">待结算</span></div>
+        <div class="job-bottom"><div><span class="price">1368</span> <span class="muted">元/单（6天）</span></div><button class="grab">排班管理</button></div>
+      </div>
+      <div class="job">
+        <div class="job-top"><span>明天 09:00-18:00</span><span>北碚 · 需求 6 人</span></div>
+        <div class="job-title">电商打包 + 贴单</div>
+        <div class="job-tags"><span class="job-tag">已报名 4</span><span class="job-tag">待开工</span></div>
+        <div class="job-bottom"><div><span class="price">220</span> <span class="muted">元/天</span></div><button class="grab">查看详情</button></div>
+      </div>
+      <div class="job">
+        <div class="job-top"><span>后天 08:00-20:00</span><span>沙坪坝 · 需求 10 人</span></div>
+        <div class="job-title">仓储理货 + 扫码出库</div>
+        <div class="job-tags"><span class="job-tag">已报名 11</span><span class="job-tag">超招提醒</span><span class="job-tag">待筛选</span></div>
+        <div class="job-bottom"><div><span class="price">240</span> <span class="muted">元/天</span></div><button class="grab">筛选名单</button></div>
+      </div>
+    </div>
+    <div class="tabs-bottom"><div class="tabs-inner">
+      <div class="tab" onclick="show('boss')">首页</div><div class="tab active">日结订单</div><div class="tab" onclick="show('bossMsg')">消息</div><div class="tab" onclick="show('bossMine')">我的</div>
+    </div></div>
+  </section>
+
+  <!-- 老板-消息 -->
+  <section id="bossMsg" class="page">
+    <div class="sub-hero boss-sub">
+      <div class="top-actions"><div class="back" onclick="show('boss')">← 返回首页</div><span class="pill">消息</span></div>
+      <div class="sub-hero-title">消息中心</div>
+      <div class="sub-hero-desc">2 位零工报名 · 1 条系统提醒 · 客服回访中</div>
+    </div>
+    <div class="panel">
+      <div class="msg"><div class="icon orange">🔔</div><div><b>系统通知</b><div class="muted">请勿私下交易，平台全程留痕保障</div></div></div>
+      <div class="msg"><div class="icon blue">📢</div><div><b>招工建议</b><div class="muted">设置常用问题可提升接单速度</div></div></div>
+      <div class="msg"><div class="icon green">👷</div><div><b>报名动态</b><div class="muted">有 2 位零工申请你的岗位</div></div></div>
+      <div class="msg"><div class="icon orange">💬</div><div><b>客服回访</b><div class="muted">你的“夜班装卸工”岗位转化率较高，可考虑继续加量。</div></div></div>
+    </div>
+    <div class="tabs-bottom"><div class="tabs-inner">
+      <div class="tab" onclick="show('boss')">首页</div><div class="tab" onclick="show('bossOrder')">日结订单</div><div class="tab active">消息</div><div class="tab" onclick="show('bossMine')">我的</div>
+    </div></div>
+  </section>
+
+  <!-- 老板-我的 -->
+  <section id="bossMine" class="page">
+    <div class="sub-hero boss-sub">
+      <div class="top-actions"><div class="back" onclick="show('boss')">← 返回首页</div><span class="pill">我的</span></div>
+      <div class="profile-row">
+        <div>
+          <div class="sub-hero-title">用户9431 | 老板</div>
+          <div class="sub-hero-desc">诚意分 30 · 一星雇主</div>
+        </div>
+        <button class="grab light">我要找工作</button>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="stats">
+        <div class="stat"><b>0</b><span class="muted">完单数</span></div>
+        <div class="stat"><b>0%</b><span class="muted">24h结算率</span></div>
+        <div class="stat"><b>0%</b><span class="muted">好评率</span></div>
+        <div class="stat"><b>0</b><span class="muted">累计支付</span></div>
+      </div>
+    </div>
+    <div class="panel grid2">
+      <div class="item"><b>人才库</b><div class="muted">沉淀可复用工人</div></div>
+      <div class="item"><b>企业认证</b><div class="muted">提升曝光与信任</div></div>
+      <div class="item"><b>联系客服</b><div class="muted">专属招工经理</div></div>
+      <div class="item"><b>招工地址</b><div class="muted">多地址管理</div></div>
+      <div class="item"><b>积分中心</b><div class="muted">购买曝光、提升转化</div></div>
+      <div class="item"><b>费用明细</b><div class="muted">招聘费 / 报酬支付明细</div></div>
+    </div>
+    <div class="panel">
+      <div class="section-title">企业服务</div>
+      <div class="muted">客服电话 400-188-6610 · 工作时间 9:00-18:00</div>
+    </div>
+    <div class="tabs-bottom"><div class="tabs-inner">
+      <div class="tab" onclick="show('boss')">首页</div><div class="tab" onclick="show('bossOrder')">日结订单</div><div class="tab" onclick="show('bossMsg')">消息</div><div class="tab active">我的</div>
+    </div></div>
+  </section>
+</div>
+
+<script src="./app.js"></script>
+</body>
+</html>

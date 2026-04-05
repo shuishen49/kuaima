@@ -1,0 +1,10 @@
+from pathlib import Path
+
+p = Path(r"D:\source_code\kuaima\web-static\index.html")
+s = p.read_text(encoding="utf-8")
+old = """    <div class=\"panel grid2\">\n      <div class=\"item\"><b>规则大全</b><div class=\"muted\">零工百宝箱</div></div>\n      <div class=\"item\"><b>接单课堂</b><div class=\"muted\">养成好习惯</div></div>\n      <div class=\"item\"><b>附近岗位</b><div class=\"muted\">义学路 32 号</div></div>\n      <div class=\"item\"><b>违规公示</b><div class=\"muted\">保障平台公平</div></div>\n    </div>\n    <div class=\"tabs-bottom\"><div class=\"tabs-inner\">\n"""
+new = """    <div class=\"panel grid2\">\n      <div class=\"item\"><b>规则大全</b><div class=\"muted\">零工百宝箱</div></div>\n      <div class=\"item\"><b>接单课堂</b><div class=\"muted\">养成好习惯</div></div>\n      <div class=\"item\"><b>附近岗位</b><div class=\"muted\">义学路 32 号</div></div>\n      <div class=\"item\"><b>违规公示</b><div class=\"muted\">保障平台公平</div></div>\n    </div>\n    <div class=\"panel\">\n      <div class=\"section-title\">平台公告</div>\n      <div class=\"msg\" style=\"padding:8px 0 12px;border-bottom:none\"><div class=\"icon orange\">📢</div><div><b>日结提醒</b><div class=\"muted\">报名后请在 10 分钟内确认接单，超时会自动取消。</div></div></div>\n      <div class=\"msg\" style=\"padding:4px 0 0;border-bottom:none\"><div class=\"icon green\">💰</div><div><b>新人补贴</b><div class=\"muted\">本周首次完单可领 18 元奖励，连续 3 天上岗额外加 30 元。</div></div></div>\n    </div>\n    <div class=\"panel\">\n      <div class=\"section-title\">附近急招</div>\n      <div class=\"job\">\n        <div class=\"job-top\"><span>今天 08:00-20:00</span><span>礼嘉 · 2.1km</span></div>\n        <div class=\"job-title\">电商打包 + 贴单复核</div>\n        <div class=\"job-tags\"><span class=\"job-tag\">白班</span><span class=\"job-tag\">包餐</span><span class=\"job-tag\">可连做</span></div>\n        <div class=\"job-bottom\"><div><span class=\"price\">220</span> <span class=\"muted\">元/天</span></div><button class=\"grab\">立即抢单</button></div>\n      </div>\n    </div>\n    <div class=\"tabs-bottom\"><div class=\"tabs-inner\">\n"""
+if old not in s:
+    raise SystemExit("worker home anchor not found")
+p.write_text(s.replace(old, new, 1), encoding="utf-8")
+print("worker home updated")
