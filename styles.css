@@ -27,6 +27,10 @@
     .boss-sub{background:linear-gradient(180deg,#ffd7ac 0%,#fff0db 100%)}
     .sub-hero-title{font-size:22px;font-weight:900;line-height:1.15;color:#111827;margin-top:4px;position:relative;z-index:1}
     .sub-hero-desc{font-size:13px;line-height:1.5;color:#6b5b37;margin-top:6px;position:relative;z-index:1}
+    .mini-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px;position:relative;z-index:1}
+    .mini-stat{background:rgba(255,255,255,.52);border:1px solid rgba(255,255,255,.42);border-radius:14px;padding:10px 8px;text-align:center;backdrop-filter:blur(4px)}
+    .mini-stat b{display:block;font-size:18px;line-height:1.1;margin-bottom:4px}
+    .mini-stat span{font-size:11px;color:#6b5b37}
     .profile-row{display:flex;justify-content:space-between;align-items:center;gap:12px;position:relative;z-index:1}
 
     .panel{background:var(--card);margin:12px;border-radius:18px;padding:15px 14px;box-shadow:0 8px 24px rgba(16,24,40,.08);border:1px solid rgba(255,215,92,.24);position:relative;overflow:hidden}
