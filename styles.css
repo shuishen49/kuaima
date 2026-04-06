@@ -100,7 +100,7 @@
     .featured-job{margin-top:10px;border-radius:18px;padding:14px;background:linear-gradient(135deg,#2a3440 0%,#101827 100%);color:#fff;box-shadow:0 16px 28px rgba(15,23,42,.18)}
     .featured-top{display:flex;justify-content:space-between;gap:8px;align-items:center}
     .featured-distance{font-size:12px;color:rgba(255,255,255,.72)}
-    .featured-title{margin:12px 0 10px;font-size:18px;line-height:1.35;font-weight:900}
+    .featured-title{margin:12px 0 10px;font-size:19px;line-height:1.35;font-weight:900;letter-spacing:.2px;text-shadow:0 2px 10px rgba(0,0,0,.14)}
     .featured-tags{display:flex;flex-wrap:wrap;gap:6px}
     .featured-tags .job-tag{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.1);color:#fff7db}
     .featured-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:14px}
