@@ -29,3 +29,4 @@
   - 已对 headed 浏览器会话掉回 `about:blank` 的情况执行关闭并重开，当前可见窗口已恢复到 `https://shuishen49.github.io/kuaima/#worker`。
   - 已再次验证 GitHub Pages 在线地址 `https://shuishen49.github.io/kuaima/` 返回 200，页面标题仍为“快马日结 - Web 静态版”。
   - 2026-04-06 上午一次 `git push` 因代理 `127.0.0.1:7897` 连接失败报错；后续排查确认问题不在当前 shell 环境变量，而在 Git 的 proxy 配置层。已执行 `git config --local/--global/--system --unset-all http.proxy https.proxy` 清理代理配置，并成功恢复推送。
+  - 同日上午后续一次 `git push` 出现 `Recv failure: Connection was reset`，按巡检要求立即重试一次后成功，确认属于瞬时网络抖动而非仓库配置问题。
