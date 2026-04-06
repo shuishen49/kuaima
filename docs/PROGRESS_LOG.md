@@ -28,3 +28,4 @@
   - 已对浏览器内核下载失败做过重试与替代方案处理（改用本机已安装的 Chrome，而非下载 Chromium）。
   - 已对 headed 浏览器会话掉回 `about:blank` 的情况执行关闭并重开，当前可见窗口已恢复到 `https://shuishen49.github.io/kuaima/#worker`。
   - 已再次验证 GitHub Pages 在线地址 `https://shuishen49.github.io/kuaima/` 返回 200，页面标题仍为“快马日结 - Web 静态版”。
+  - 2026-04-06 上午一次 `git push` 因代理 `127.0.0.1:7897` 连接失败报错，已立即重试并通过清空 `HTTP_PROXY/HTTPS_PROXY/ALL_PROXY` + `git -c http.proxy= -c https.proxy= push` 成功推送。
