@@ -104,6 +104,8 @@
     .featured-tags{display:flex;flex-wrap:wrap;gap:6px}
     .featured-tags .job-tag{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.1);color:#fff7db}
     .featured-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:14px}
+    .featured-meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;font-size:12px;color:rgba(255,255,255,.78)}
+    .featured-meta span{padding:5px 8px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08)}
     .boss-featured{background:linear-gradient(135deg,#a35f00 0%,#6b3d00 100%)}
     .job{border:1px solid #f1e8d4;border-radius:16px;padding:13px 12px;margin-top:10px;background:linear-gradient(180deg,#fffdfa 0%,#fff9ef 100%);box-shadow:0 6px 18px rgba(17,24,39,.04)}
     .job-top{display:flex;justify-content:space-between;gap:8px;font-size:13px;color:#4b5563}
