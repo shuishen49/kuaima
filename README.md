@@ -1,6 +1,6 @@
 # kuaima-web-static
 
-快马日结静态 Web 版。
+快马日结手机版静态 Web / H5 版。
 
 ## 项目预览
 
@@ -18,7 +18,7 @@
 
 ## 项目说明
 
-这是将原 uni-app 小程序前端整理为可直接部署到 GitHub Pages / EdgeOne Pages 的静态 Web Demo 版本，包含：
+这是将原 uni-app 小程序前端整理为可直接部署到 GitHub Pages / EdgeOne Pages 的**手机版静态 Web / H5 Demo**，重点是移动端观感与手机端信息结构还原，不是 PC 官网版本。包含：
 
 - 身份选择页
 - 零工端：首页 / 订单 / 消息 / 我的
@@ -39,6 +39,8 @@
 直接打开 `index.html`，或用任意静态服务器托管。
 
 ## 在线预览
+
+> 建议用浏览器移动端模拟模式或直接用手机打开查看，页面按手机端视觉结构设计。
 
 - GitHub Pages：首页 `https://shuishen49.github.io/kuaima/`
 - 零工页：`https://shuishen49.github.io/kuaima/#worker`
