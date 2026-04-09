@@ -30,3 +30,17 @@
   - 已再次验证 GitHub Pages 在线地址 `https://shuishen49.github.io/kuaima/` 返回 200，页面标题仍为“快马日结 - Web 静态版”。
   - 2026-04-06 上午一次 `git push` 因代理 `127.0.0.1:7897` 连接失败报错；后续排查确认问题不在当前 shell 环境变量，而在 Git 的 proxy 配置层。已执行 `git config --local/--global/--system --unset-all http.proxy https.proxy` 清理代理配置，并成功恢复推送。
   - 同日上午后续一次 `git push` 出现 `Recv failure: Connection was reset`，按巡检要求立即重试一次后成功，确认属于瞬时网络抖动而非仓库配置问题。
+
+## 2026-04-06 17:58
+- 巡检结果：`kuaima` 主任务未卡住，网页仍在线可访问。
+- 已确认：
+  - `D:\source_code\kuaima\web-static` 当前工作区无未提交改动。
+  - `https://shuishen49.github.io/kuaima/` 返回 `200`，提取到首页正文片段“零工找活 / 真老板真工价真日结 / 老板招工”。
+- 本轮异常：
+  - 巡检窗口内出现两次与 OpenClaw 会话操作相关的失败事件：
+    - 一次 `exec` 进程被 `SIGKILL`。
+    - 一次 `openclaw agent --local --agent main --session-id ice-session ...` 因主会话 session 文件锁冲突失败：`session file locked ... jsonl.lock`。
+- 重试情况：
+  - 已按规则立即执行一次重试，并改为不占用主会话锁的路径：使用 `openclaw agent --agent ice --session-id ice-session ...` 成功返回 `ICE_SESSION_READY`。
+- 结论：
+  - 上述失败属于新建会话时的外部会话锁冲突，不属于 `kuaima` 静态网页迁移本身的阻塞；`kuaima` 主线无需额外恢复操作，可继续保持低噪音巡检。
